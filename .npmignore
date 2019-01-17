@@ -1,0 +1,11 @@
+node_modules
+docs
+.tscache
+.vscode
+.docs
+src
+face-command.sqlite
+.DS_Store
+Gruntfile.js
+grunt
+build
