@@ -9,3 +9,4 @@ face-command.sqlite
 Gruntfile.js
 grunt
 build
+dist

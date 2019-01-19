@@ -7,7 +7,7 @@ module.exports = (grunt) => {
         'packager': {
 
         },
-        clean: ["lib"],
+        clean: ["lib", "dist", "build"],
         ts: {
             default : {
               outDir: "lib",
@@ -21,8 +21,8 @@ module.exports = (grunt) => {
 
     grunt.registerTask('build-ts', ["clean", 'ts']);
 
-    grunt.registerTask('build', ['build-ts', 'icons', 'packager']);
-    grunt.registerTask('build-all', ['build-ts', 'icons', 'packager:all']);
+    grunt.registerTask('build', ["clean", 'build-ts', 'icons', 'packager']);
+    grunt.registerTask('build-all', ["clean", 'build-ts', 'icons', 'packager:all']);
     grunt.registerTask('dist', ['build', 'zipper']);
     grunt.registerTask('dist-all', ['build-all', 'zipper']);
     grunt.registerTask('default', ['build']);

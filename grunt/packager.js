@@ -18,16 +18,20 @@ module.exports = (grunt) => {
             rm('-rf', out_dir);
         
         let default_options = {
-            appCopyright: `Copyright (c) 2018 ${pkg.author}`,
             icon: icon,
-            dir: path.join(__dirname, '..'),
+            dir: project_root,
+            name: "face-command",
+            overwrite: true,
+            appVersion: pkg.version,
             ignore: [ 
                 /grunt/g, 
                 /icons\/.*\.svg$/g,
                 /\.git.*/g,
                 /\.npmignore$/g,
                 /Gruntfile\.js$/g,
-                /dist/g
+                /^docs$/g,
+                /^build$/g,
+                /^dist$/g
             ],
             out: out_dir,
             asar: false

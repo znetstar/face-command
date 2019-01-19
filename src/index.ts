@@ -3,6 +3,7 @@ import { Main, ConfigureNconf } from "face-command-server/lib/launch";
 import defaultConfig from "face-command-server/lib/DefaultConfiguration";
 import { ElectronTransport } from "multi-rpc-electron-transport";
 import { MsgPackSerializer } from "multi-rpc-msgpack-serializer";
+import { homedir } from "os";
 import { Provider } from "nconf";
 import * as _ from "lodash";
 const { localStorage } = require('electron-browser-storage');
@@ -51,7 +52,7 @@ async function gui() {
           submenu: [
             {
               label: 'Learn More',
-              click: () => { shell.openExternal('https://github.com/znetstar/aria2ui') }
+              click: () => { shell.openExternal('https://github.com/znetstar/face-command') }
             }
           ]
         }
@@ -98,6 +99,8 @@ async function gui() {
 const transport = new ElectronTransport(new MsgPackSerializer(), channelName, { ipcMain });
 
 const defaults = _.cloneDeep(defaultConfig);
+
+defaults.databaseUrl = `sqlite://${homedir()}/face-command.sqlite`;
 defaults.httpServer = false;
 defaults.rpcTransports = [ transport ];
 

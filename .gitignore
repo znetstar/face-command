@@ -5,3 +5,4 @@ lib
 face-command.sqlite
 .DS_Store
 build
+dist

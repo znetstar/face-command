@@ -16,7 +16,7 @@ module.exports = (grunt) => {
 
         let folders = ls(build_root);
         for (let folder of folders) {
-            let platform = folder.match(/^aria2ui-(.*)-/);
+            let platform = folder.match(/^face-command-(.*)-/);
             if (!platform) 
                 continue;
             
