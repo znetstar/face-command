@@ -1,5 +1,5 @@
 # Changelog
 
-## [1.0.0] - 2018-09-19
+## [1.0.0] - 2019-01-16
 ### Added
 - Inital release.
